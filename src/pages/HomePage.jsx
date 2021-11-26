@@ -19,7 +19,7 @@ function HomePage() {
 	}, []);
 	return (
 		<div>
-			<ExercisesList exercises={exercises} />
+			<ExercisesList exercises={exercises} setExercises={setExercises} />
 		</div>
 	);
 }

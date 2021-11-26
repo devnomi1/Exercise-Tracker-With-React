@@ -1,10 +1,11 @@
 {
   "exercises": [
     {
-      "title": "pushups",
-      "details": "Lorem Ipsum",
+      "title" : "pushpup",
+      "details" : "Begin lowering your body by bending your elbows, keeping your core tight and your back flat, until your chest grazes the floor. Keep your elbows tucked in toward your body. Extend your elbows and push your body back up, using your triceps and chest. Repeat for as many reps as possible, for 3 sets.",
       "complete": false,
       "id": 7581
+
     }
   ]
 }

@@ -1,12 +1,17 @@
 import React from "react";
 import ExercisesItem from "./ExercisesItem";
 
-function ExercisesList({ exercises }) {
+function ExercisesList({ exercises, setExercises }) {
 	if (exercises.length === 0) return null;
 	return (
-		<ul>
+		<ul className="exercises-list">
 			{exercises.map((exercise) => (
-				<ExercisesItem key={exercise.id} exercise={exercise} />
+				<ExercisesItem
+					key={exercise.id}
+					exercise={exercise}
+					exercises={exercises}
+					setExercises={setExercises}
+				/>
 			))}
 		</ul>
 	);
