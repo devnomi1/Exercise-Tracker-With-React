@@ -16,18 +16,26 @@ function ExercisesItem({ exercise, exercises, setExercises }) {
 
 	//  Toggle function For exercise Completion
 	function exerciseToggleHandler() {
-		setExercises(
-			exercises.map((item) => {
-				console.log("Id is", exercise.id);
-				if (item.id === exercise.id) {
-					return {
-						...item,
-						complete: !item.complete,
-					};
-				}
-				return item;
+		fetch(`http://localhost:3111/exercises/${exercise.id}`, {
+			method: "PATCH",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ complete: !exercise.complete }),
+		})
+			.then(() => {
+				setExercises(
+					exercises.map((item) => {
+						console.log("Id is", exercise.id);
+						if (item.id === exercise.id) {
+							return {
+								...item,
+								complete: !item.complete,
+							};
+						}
+						return item;
+					})
+				);
 			})
-		);
+			.catch((error) => console.log(error));
 	}
 
 	return (
