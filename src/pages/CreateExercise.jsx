@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateExercise() {
 	const [exercise, setExercise] = useState({
@@ -7,9 +7,7 @@ function CreateExercise() {
 		details: "",
 	});
 
-	useEffect(() => {}, []);
-
-	let params = useParams();
+	
 	let navigate = useNavigate();
 
 	// Value Reader function
@@ -18,11 +16,11 @@ function CreateExercise() {
 			...exercise,
 			[e.target.name]: e.target.value,
 		});
-		console.log({ [e.target.name]: e.target.value });
+		
 	}
 
 	// Add Exercises funtion
-	function AddedExerciseHandler(event) {
+	function addedExerciseHandler(event) {
 		event.preventDefault();
 		const newExercise = {
 			title: exercise.title,
@@ -44,7 +42,7 @@ function CreateExercise() {
 
 	// Components Return Method
 	return (
-		<form onSubmit={AddedExerciseHandler}>
+		<form onSubmit={addedExerciseHandler}>
 			<label>Title</label>
 			<input
 				type="text"
