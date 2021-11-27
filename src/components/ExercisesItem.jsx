@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ExercisesItem({ exercise, exercises, setExercises }) {
 	// Exercise Deleted
@@ -24,7 +25,6 @@ function ExercisesItem({ exercise, exercises, setExercises }) {
 			.then(() => {
 				setExercises(
 					exercises.map((item) => {
-						console.log("Id is", exercise.id);
 						if (item.id === exercise.id) {
 							return {
 								...item,
@@ -44,6 +44,7 @@ function ExercisesItem({ exercise, exercises, setExercises }) {
 				<h4>{exercise.title}</h4>
 				<div className="buttons">
 					<button onClick={deleteExerciseHandler}>Delete</button>
+					<Link to={`/exercises/${exercise.id}/edit`}>Edit</Link>
 					<button onClick={exerciseToggleHandler}>Toggle</button>
 				</div>
 			</div>

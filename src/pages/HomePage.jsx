@@ -12,7 +12,7 @@ function HomePage() {
 				console.log("Here are exercises that we fetched", fetch);
 				setExercises(fetchedExercises);
 			} catch (error) {
-				console.log(error);
+				console.log("this is the error", error);
 			}
 		}
 		fetchExercises();
